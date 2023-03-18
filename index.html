@@ -90,6 +90,16 @@
  <p>Ray-Triangle Intersection: We used Moller Trumbore algorithm to check if the ray intersects with the triangle. If the ray intersects with the triangle, we update ray.max_t as t. </p>
  <p>Ray-Sphere Intersection: We check if the ray intersection by solving the quadratic equation below: </p>
   
+  <div align="center">
+  <table style="width=100%">
+      <tr>
+          <td align="middle">
+          <img src="images/part1/Screen Shot 2023-03-17 at 5.30.39 PM.png" width="480px" />
+      </tr>
+  </table>
+</div>
+  
+  <p>After solving for t, we need to check if t is in the range from ray.min_t to ray.max_t and update ray.max_t as t so that the intersections are farther away can be ignored.</p>
 
 <h3>
   Explain the triangle intersection algorithm you implemented in your own words.
