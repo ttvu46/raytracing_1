@@ -268,14 +268,14 @@ Compare the results between uniform hemisphere sampling and lighting sampling in
   Walk through both implementations of the direct lighting function.
 </h3>
 <p>
-  Since BRDF represents the ratio of incoming light scattered from incident direction to outgoing direction, and Lambertian BSDF reflects the incomming radiance uniform across the hemisphere, then the diffuse BSDF is given my this->reflectance/pi.
+  Since BRDF represents the ratio of incoming light scattered from incident direction to outgoing direction, and Lambertian BSDF reflects the incomming radiance uniform across the hemisphere, then the diffuse BSDF is given by this->reflectance/pi.
 </p>
 
 <p>Zero-bounce illumination refers to a light that comes from a light source. When the light intersects with the object, we only need to compute the light that results from no bounce of light, which is the emission of the object that was intersected.</p>
 
 <p>There are 2 methods for direct lighting. The first one is estimate_direct_lighting_hemisphere, the second one is estimate_direct_lighting_importance.</p>
 
-<p>estimate_direct_lighting_hemisphere estimates the direct lightning on a point by sampling all the light source uniformly in the hemisphere. We compute this by using a Monte Carlo estimator:</p>
+<p>estimate_direct_lighting_hemisphere estimates the direct lightning on a point by sampling all the light source uniformly in the hemisphere. We compute this by using a Monte Carlo estimator. For importance sampling, we iterate through all the lights in the scene. If the light is a point light, we calculate using the Monte Carlo Estimator described above. In the other case, we take ns_area_light samples to get an average of the light that hits the pixel.</p>
 <div align="center">
   <table style="width=100%">
       <tr>
@@ -284,7 +284,7 @@ Compare the results between uniform hemisphere sampling and lighting sampling in
       </tr>
   </table>
 </div>
-
+<p>
 
 <h3>
   Show some images rendered with both implementations of the direct lighting function.
