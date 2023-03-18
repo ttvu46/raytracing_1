@@ -44,7 +44,7 @@
 <h2 align="middle">Truc Vu, Derwin Wu</h2>
 
 <!-- Add Website URL -->
-<h2 align="middle">Website URL: <a href="TODO">TODO</a></h2>
+<h2 align="middle">Website URL: <a href="https://tvu2000.github.io/raytracing_1/">https://tvu2000.github.io/raytracing_1/</a></h2>
 
 <br><br>
 
@@ -86,6 +86,10 @@
 
 <p>We convert camera space's coordinate (x, y) to world space by multiplying it with c2w. After that, we initialize a ray with normalized vector (x, y) and with an origin as pos. Ray intersection helps us stimulate the lighting of the scence by rendering reflections, refractions, and shadows. We have implementations that check for triangle intersection and sphere intersection.</p>
 <br>
+  
+ <p>Ray-Triangle Intersection: We used Moller Trumbore algorithm to check if the ray intersects with the triangle. If the ray intersects with the triangle, we update ray.max_t as t. </p>
+ <p>Ray-Sphere Intersection: We check if the ray intersection by solving the quadratic equation below: </p>
+  
 
 <h3>
   Explain the triangle intersection algorithm you implemented in your own words.
